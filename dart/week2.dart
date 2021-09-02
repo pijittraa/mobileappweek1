@@ -1,23 +1,29 @@
 void main() {
-  //print(callGen(2000));
-  // var x = callColor();
-  // print(x);
-  callWeb("YouTube",protocal: "https",port : 443);
-}
-//เขียนแบบ Arrow Function
-String callGen(int year) => (year >= 1996) ? "Gen Z" : "Gen Y";
-//           สีที่ต้องการเพิ่ม       
-int callColor([String newColor = "White"]) {
+  //print (callGen(1999));
 
-  //                        0       1      2
-  List<dynamic> color = ["BLACK", "GREEN", "BLUE"];
-  // เพิ่มสี
+ /* var x = callColor("black");
+  print(x);
+  */
+//เรียกใช้ฟังก์ชั่น
+  callWeb("Google",protocal : "https", port : 443);
+}
+//เรียกฟังก์ชั่น แบบ short-hand
+String callGen(int year) => (year >= 1996) ? "Gen Z" : "Gen Y";
+/******Test1*********/
+
+int callColor([String newColor = "pink"]) { //ฟังก์ชั่น
+  List<dynamic> color = ["red", "blue", "green"]; //ฟังก์ชั่น List
+
   color.add(newColor);
-  for (var item in color) {
+
+  for (var item in color) { //เรียกใช้ for in
     print(item);
   }
-  // ตัวนับจำนวนสี
-  return color.length;
-}
-//            ชื่อเว็บ           เลข port       Protocal                         
-void callWeb(String web , {int port = 80, String protocal = "http"})=>print("$protocal $web $port");
+  return color.length; //การรีเทิร์นค่าจพนวนในList
+} /******Test2*********/
+
+
+//การเรียกใช้ฟังก์ชั่น Arrow , การเชื่อมต่อweb , ต่อ port การเรียกใช้  name , parameter
+void callWeb(String web, {int port = 80, String protocal ="http"}) => 
+print("$protocal $web : $port");
+/******Test3*********/
